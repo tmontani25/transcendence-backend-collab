@@ -19,7 +19,7 @@ const start = async () => {
   } catch (err) {
     // Log error and exit if server fails to start
     server.log.error(err)
-    process.exit(1) //bite
+    process.exit(1)
   }
 }
 

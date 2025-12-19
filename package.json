@@ -4,7 +4,7 @@
   "description": "broton and tmontani's work on the backend of the ft_transcendance project",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts", 
+    "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/tmontani25/transcendence-backend-collab#readme",
   "dependencies": {
+    "better-sqlite3": "^12.5.0",
     "fastify": "^5.6.2"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^25.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
