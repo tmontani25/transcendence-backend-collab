@@ -20,40 +20,36 @@ export const initDatabase = (): Database.Database => {
     return db
 }
 
-//Fonction 2 : Récupérer la DB
+//Fonction 2 gets the database
 export const getDatabase = (): Database.Database => {
   if (!db) {
     return initDatabase()
   }
   return db
-
 }
 
-//Fonction 3 : Vérifier la santé de la DB
+//Fonction 3 : check the database
 export const checkDatabaseHealth = (): boolean => {
+  //check if the database is ok : sqlite responds, db is accesible, structure ok
+  const dbtemp = getDatabase();
+  // on a la db
+  
   try {
-    const database = getDatabase()
-    const res = database.pragma('integrity_check')
+    const raw = dbtemp.pragma("integrity_check");
+    console.log(raw);
 
-    // Normalize result to a single string value
-    let val: string | null = null
-    if (Array.isArray(res)) {
-      const first = res[0]
-      if (first && typeof first === 'object') {
-        const values = Object.values(first)
-        val = values.length ? String(values[0]) : null
-      } else {
-        val = first != null ? String(first) : null
-      }
-    } else if (res && typeof res === 'object') {
-      const values = Object.values(res)
-      val = values.length ? String(values[0]) : null
-    } else {
-      val = res != null ? String(res) : null
-    }
+  const value = raw as {integrity_check: string}[]
+  if (value.length <= 0)
+      return false;
+  if (value[0].integrity_check !== "ok")
+    return false;
+} catch(err){
+  if(err instanceof Error)
+    console.log(err.message)
+  else
+    console.log("Unknown error during DB health check", err);
+  return false;
+}
 
-    return val === 'ok'
-  } catch (err) {
-    return false
-  }
+  return true;
 }
