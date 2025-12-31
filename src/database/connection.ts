@@ -3,7 +3,7 @@ import { config } from '../config/env' //import general config
 import { existsSync, mkdirSync } from 'fs'
 import { dirname } from 'path'
 
-// Variable globale qui stocke la connexion
+// global variable db
 let db: Database.Database | null = null
 
 export const initDatabase = (): Database.Database => {
@@ -50,6 +50,5 @@ export const checkDatabaseHealth = (): boolean => {
     console.log("Unknown error during DB health check", err);
   return false;
 }
-
   return true;
 }

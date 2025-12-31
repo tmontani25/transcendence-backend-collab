@@ -1,5 +1,6 @@
 import Fastify from 'fastify'
 import { initDatabase, checkDatabaseHealth, initTables } from './database'
+import { success, errorResponse} from "./utils/response";
 
 // Create a Fastify server instance with logging enabled
 const server = Fastify({
@@ -8,8 +9,12 @@ const server = Fastify({
 
 // Health check route - returns "pong" when pinged
 server.get('/ping', async (request, reply) => {
-  return { message: 'pong' }
+  return success("pong");
 })
+
+server.get('/fuck', async (request, reply) => {
+  return errorResponse("10", "test error");
+} )
 
 // Start the server
 const start = async () => {
