@@ -1,3 +1,4 @@
+---
 name: 🧩 Task pédagogique
 about: Issue backend – Transcendence (42)
 ---
