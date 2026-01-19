@@ -1,58 +1,28 @@
----
 name: 🧩 Task pédagogique
-about: Issue pédagogique pour Transcendence Backend
+about: Issue backend – Transcendence (42)
 ---
 
 ## 📝 Titre
-[Contexte] – Action claire et précise
-
----
+[Contexte] – Action claire
 
 ## 🎯 Objectif
-Décrire ce que cette issue doit accomplir.
+En 1–2 phrases : ce que cette issue doit rendre possible.
 
----
-
-## 🧠 Pourquoi cette issue existe
-- Problème résolu
-- Pourquoi c’est nécessaire
-
----
-
-## 📌 Ce que je dois comprendre
+## 📌 À comprendre
 - Concept principal
-- Concepts secondaires
+- Point flou éventuel
 
----
-
-## 🔍 Périmètre
-### Inclus
--
-
-### Exclu
--
-
----
-
-## 🛠️ Plan (pseudo-code)
+## 🛠️ Plan (3–5 étapes)
 1.
 2.
 3.
 
----
-
 ## ✅ Critères de validation
 - [ ]
 - [ ]
-- [ ]
 
----
-
-## 🧪 Tests à effectuer
-- 
+## 🧪 Tests
 - 
 
----
-
-## 📝 Notes / apprentissages
-*(à remplir après)*
+## 📝 Notes
+*(après l’issue : ce que j’ai appris / pièges)*
