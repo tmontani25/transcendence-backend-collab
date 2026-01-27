@@ -17,6 +17,7 @@ export const initDatabase = (): Database.Database => {
   }
     db = new Database(config.database.path)
     db.pragma('foreign_keys = ON')
+    db.pragma("journal_mode = WAL")
     return db
 }
 

@@ -1,3 +1,5 @@
+
+
 import { initDatabase, getDatabase, checkDatabaseHealth } from './connection'
 import { initTables } from './init'
 
