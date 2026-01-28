@@ -1,15 +1,19 @@
 import Fastify from 'fastify'
+import cors from '@fastify/cors'
 import { initDatabase, checkDatabaseHealth, initTables } from './database'
 import { success, errorResponse} from "./utils/response";
 import v1Routes from './routes/v1'
 import { errorHandler, notFoundHandler} from './utils/ErrorHandler'
+import fastifyCors from '@fastify/cors';
 
 // Create a Fastify server instance with logging enabled
 const server = Fastify({
   logger: true
 })
+server.register(cors, {
+origin: '*'
 
-// Health check route - returns "pong" when pinged
+})
 
 // Start the server
 const start = async () => {

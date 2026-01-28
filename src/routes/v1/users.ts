@@ -9,19 +9,18 @@ import { z } from 'zod'
 
 
 export default async function usersRoutes(server : FastifyInstance){
-    /************************* ZOD TESTER POST **********************************/
+    /************************* ZOD TESTER **********************************/
     server.post('/zodTest', async (request, reply) => {
         const userSchema = z.object({
             username: z.string().min(1, 'username requis')
         })
         const result = userSchema.safeParse(request.body)
         if (!result.success) {
-            throw new BadRequestError("validation error")
+            throw new BadRequestError("test zod error")
         }
         return success(result.data)
     })
 
- /************************* ZOD TESTER **********************************/
 server.get('/zodTest', async (request, reply) =>{
 
     const userSchema = z.object({
